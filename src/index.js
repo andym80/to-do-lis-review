@@ -47,9 +47,9 @@ addNewBtn.addEventListener('click', () => {
     localStorage.setItem('todoList', newStorage);
     task.value = '';
     reload();
-  } else {
-    alert('Tasks must contain text.\nTry typing something into the "Add to your list..." input.');
+    return;
   }
+  alert('Tasks must contain text.\nTry typing something into the "Add to your list..." input.');
 });
 
 const clrBtn = document.getElementById('clear-all');
@@ -67,3 +67,15 @@ const checkBtn = document.getElementById('check-all');
 checkBtn.addEventListener('click', () => {
 
 });
+
+/* list.addEventListener('click', (e) => {
+  if (e.target.tagName === 'INPUT' && e.target.classList.contains('add-item')) {
+    const taskDescription = e.target;
+    let index = taskDescription.parentElement.parentElement.id;
+    taskDescription.addEventListener('keydown', (e) => {
+      if (e.keyCode === 13 && taskDescription.value !== '') {
+        editTask(taskDescription.value, index);
+      }
+    });
+  }
+}); */
